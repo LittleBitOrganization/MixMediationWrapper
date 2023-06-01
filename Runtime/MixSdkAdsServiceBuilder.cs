@@ -4,6 +4,7 @@ using LittleBit.Modules.CoreModule;
 using LittleBitGames.Ads.AdUnits;
 using LittleBitGames.Ads.Configs;
 using LittleBitGames.Environment.Ads;
+using MixNameSpace;
 
 namespace LittleBitGames.Ads
 {
@@ -22,19 +23,12 @@ namespace LittleBitGames.Ads
             _adsConfig = adsConfig;
             _adUnitsFactory = new MixSdkAdUnitsFactory(coroutineRunner, adsConfig);
             _initializer = new MixSdkInitializer(adsConfig);
-
-            if (!ValidateMaxSdkKey())
-                throw new Exception($"Max sdk key is invalid! Key: {_adsConfig.MaxSettings.MaxSdkKey}");
         }
-
-        private bool ValidateMaxSdkKey() => !string.IsNullOrEmpty(_adsConfig.MaxSettings.MaxSdkKey);
 
         public IAdsService QuickBuild()
         {
-            if (!string.IsNullOrEmpty(_adsConfig.MaxSettings.PlatformSettings.MaxInterAdUnitKey) && _adsConfig.IsInter) 
-                BuildInterAdUnit();
-            if (!string.IsNullOrEmpty(_adsConfig.MaxSettings.PlatformSettings.MaxRewardedAdUnitKey) && _adsConfig.IsRewarded) 
-                BuildRewardedAdUnit();
+            BuildInterAdUnit();
+            BuildRewardedAdUnit();
 
             return GetResult();
         }

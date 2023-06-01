@@ -17,9 +17,9 @@ namespace LittleBitGames.Ads
 
         //Id takes from mix logic
         public IAdUnit CreateInterAdUnit() =>
-            new MixSdkInterAd(null, _coroutineRunner);
+            new MixSdkInterAd(new AdUnitKey("InterKey"), _coroutineRunner);
 
         public IAdUnit CreateRewardedAdUnit() =>
-            new MixSdkRewardedAd(null, _coroutineRunner);
+            new MixSdkRewardedAd(new AdUnitKey("InterKey"), _coroutineRunner);
     }
 }
