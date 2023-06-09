@@ -6,12 +6,9 @@
         "GUID:69246b39d9114134eb297d386a5dfe4e",
         "GUID:b4f7b59e66f3b42cf95c5358d565c84f",
         "GUID:a4cfc1a18fa3a469b96d885db522f42e",
-        "GUID:13225387b0b504ba99c0fc97adc70a33"
+        "GUID:0aadd910c4982ca4190ebc1e869119a7"
     ],
-    "includePlatforms": [
-        "Android",
-        "iOS"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
